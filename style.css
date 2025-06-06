@@ -15,6 +15,10 @@ body {
   line-height: 1.6rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* The header section starts here */
 .responsive-header {
   display: flex;
@@ -27,7 +31,7 @@ body {
   top: 0;
   margin-top: -1rem;
   z-index: 20;
-  background-color: rgba(21, 21, 21, 0.1); /* Semi-transparent by default */
+  background-color: rgba(21, 21, 21, 1); /* Semi-transparent by default */
   transition: background-color 0.3s ease;
 }
 .responsive-header.sticking {
@@ -36,11 +40,11 @@ body {
   box-shadow: 0 2px 4px rgba(21, 21, 21, 0.1);
 }
 #call-button button {
-  background-color: #a82eff;
+  background-color: var(--zrk-red);
   border: none;
 }
 #call-button button:hover {
-  border: 1px solid #a82eff;
+  border: 1px solid var(--zrk-red);
   background-color: transparent;
 }
 .responsive-header > .mobile-call-button {
@@ -56,9 +60,9 @@ body {
   height: 40px;
   width: 100px;
   font-size: 1rem;
-  border: 1px solid #a82eff;
+  border: 1px solid var(--zrk-red);
   border-radius: 10px;
-  background-color: #a82eff;
+  background-color: var(--zrk-red);
   color: white;
   text-transform: capitalize;
 }
@@ -217,12 +221,18 @@ header * {
   height: 40px;
   width: 80px;
   font-size: 1rem;
-  border: 1px solid gray;
+  border: transparent;
   border-radius: 10px;
-  background-color: transparent;
+  background-color: var(--zrk-red);
   color: white;
   text-transform: capitalize;
 }
+.navigation button:hover {
+  border: 1px solid var(--zrk-red);
+  background-color: transparent;
+  transition: var(--animation-timing);
+}
+
 .header-hr {
   margin-top: -0.1rem;
   width: 100%;
@@ -291,7 +301,7 @@ header * {
   font-weight: 300;
   /* margin-top: -5dvh; */
 }
-.our-story {
+#about-us {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -319,7 +329,7 @@ header * {
 #story-text p {
   margin-top: 0;
 }
-.our-mission {
+#our-mission {
   height: 45vh;
   width: 100%;
   display: flex;
@@ -330,11 +340,11 @@ header * {
   color: white;
   padding-top: 2rem;
 }
-.our-mission h2 {
+#our-mission h2 {
   font-size: 3rem;
   font-weight: 400;
 }
-.our-mission p {
+#our-mission p {
   width: 60%;
   text-align: center;
   font-size: 1.5rem;
@@ -347,7 +357,7 @@ header * {
   flex-direction: column;
   align-items: center;
 }
-.services {
+#services {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -359,7 +369,7 @@ header * {
             position: relative;
             overflow: hidden; */
 }
-.services h2 {
+#services h2 {
   width: 60%;
   margin-top: 5rem;
   text-align: center;
@@ -367,11 +377,11 @@ header * {
   font-size: 3rem;
   font-weight: 500;
 }
-.services p {
+#services p {
   width: 60%;
   margin-top: -0.3rem;
 }
-.services span {
+#services span {
   font-weight: 600;
 }
 .service-list {
@@ -394,7 +404,7 @@ header * {
   font-size: 1.4rem;
   font-weight: 500;
 }
-.services button {
+#services button {
   background-color: #ff0000;
   color: white;
   font-family: "poppins";
@@ -406,7 +416,7 @@ header * {
   margin-top: 2rem;
   margin-bottom: 4rem;
 }
-.services button:hover {
+#services button:hover {
   background: none;
   border: 1px solid #ff0000;
   transition: var(--animation-timing);
@@ -529,7 +539,7 @@ header * {
 
 /* The contact us section begins here */
 
-.contact-container {
+#contact {
   width: 100%;
   height: 80dvh;
   background-image: url(images/contact-us_image.webp);
@@ -604,12 +614,12 @@ form button:hover {
     width: 70%;
   }
 
-  .our-mission p {
+  #our-mission p {
     width: 70%;
   }
 
-  .services h2,
-  .services p {
+  #services h2,
+  #services p {
     width: 70%;
   }
 
@@ -680,26 +690,26 @@ form button:hover {
     text-align: center;
   }
 
-  .our-mission {
+  #our-mission {
     height: auto;
     padding: 3rem 0;
   }
 
-  .our-mission h2 {
+  #our-mission h2 {
     font-size: 2.5rem;
   }
 
-  .our-mission p {
+  #our-mission p {
     width: 80%;
     font-size: 1.3rem;
   }
 
-  .services h2 {
+  #services h2 {
     width: 80%;
     font-size: 2.5rem;
   }
 
-  .services p {
+  #services p {
     width: 80%;
   }
 
@@ -821,26 +831,26 @@ form button:hover {
     text-align: center;
   }
 
-  .our-mission {
+  #our-mission {
     height: auto;
     padding: 2rem 0;
   }
 
-  .our-mission h2 {
+  #our-mission h2 {
     font-size: 2rem;
   }
 
-  .our-mission p {
+  #our-mission p {
     width: 90%;
     font-size: 1.1rem;
   }
 
-  .services h2 {
+  #services h2 {
     width: 90%;
     font-size: 2rem;
   }
 
-  .services p {
+  #services p {
     width: 90%;
   }
 
@@ -991,27 +1001,27 @@ form button:hover {
     text-align: center;
   }
 
-  .our-mission {
+  #our-mission {
     height: auto;
     padding: 1.5rem 0;
   }
 
-  .our-mission h2 {
+  #our-mission h2 {
     font-size: 1.5rem;
   }
 
-  .our-mission p {
+  #our-mission p {
     width: 95%;
     font-size: 1rem;
   }
 
-  .services h2 {
+  #services h2 {
     width: 95%;
     font-size: 1.5rem;
     margin-top: 2rem;
   }
 
-  .services p {
+  #services p {
     width: 95%;
     font-size: 0.9rem;
     text-align: center;
@@ -1032,7 +1042,7 @@ form button:hover {
     font-size: 1.1rem;
   }
 
-  .services button {
+  #services button {
     width: 8rem;
     height: 2rem;
     margin-bottom: 2rem;
@@ -1224,16 +1234,16 @@ form button:hover {
     line-height: 1.2;
   }
 
-  .our-mission {
+  #our-mission {
     height: auto;
     padding: 1rem 0;
   }
 
-  .our-mission h2 {
+  #our-mission h2 {
     font-size: 1rem;
   }
 
-  .our-mission p {
+  #our-mission p {
     width: 98%;
     font-size: 0.7rem;
   }
