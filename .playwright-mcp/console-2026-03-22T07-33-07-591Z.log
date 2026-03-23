@@ -1,1 +1,0 @@
-[    6109ms] [ERROR] %c | display: block;font-size: 11px;font-weight: bold;background: url('https://www.clickcease.com/assets/img/cc-logo.png') no-repeat;background-size: auto 22px;padding: 2.75px 5.5px 2.75px 71.5px Duplicated clickcease <script/> found, Please remove one of them. @ https://www.clickcease.com/monitor/stat.js:0
