@@ -733,7 +733,7 @@ header * {
 #assurance-text {
   position: absolute;
   bottom: 3rem;
-  left: 8%;
+  left: 20%;
   width: 40%;
   max-width: var(--max-content);
   color: white;
