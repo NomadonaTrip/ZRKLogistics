@@ -23,7 +23,7 @@
 
 @font-face {
   font-family: "Neilvard Three";
-  src: url("fonts/NeilvardThree-Regular.ttf") format("truetype");
+  src: url("../../fonts/NeilvardThree-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -433,7 +433,7 @@ header * {
    image background with overlay, generous padding
    ══════════════════════════════════════════ */
 .hero {
-  background-image: url("/assets/images/smiling_woman-transformed2.jpg");
+  background-image: url("../images/smiling_woman-transformed2.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -557,7 +557,7 @@ header * {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(/assets/images/our-mission-backgrd1.jpg);
+  background-image: url(../images/our-mission-backgrd1.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -894,7 +894,7 @@ header * {
 #advantage-container {
   width: 100%;
   min-height: 55dvh;
-  background-image: url(/assets/images/ZRK-Advantage2.webp);
+  background-image: url(../images/ZRK-Advantage2.webp);
   background-size: cover;
   background-position: center;
   display: flex;
