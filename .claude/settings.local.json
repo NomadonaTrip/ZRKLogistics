@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "WebSearch",
+      "Bash(mkdir -p \"/mnt/e/TOOLMAKER/WEB PROJECTS/ZRKLogistics/fonts\")",
+      "Bash(curl -sL \"https://freefonts.co/wp-content/fonts/basic/neilvard-three-regular.ttf\" -o NeilvardThree-Regular.ttf)",
+      "Bash(rm -f NeilvardThree-Regular.ttf)",
+      "Bash(curl -sL \"https://db.onlinewebfonts.com/t/a8b0e4f5b6c8d9e7f2a1b3c4d5e6f7a8.ttf\" -o test.ttf)",
+      "Bash(curl -sL \"https://www.onlinewebfonts.com/download/a8b0e4f5b6c8d9e7f2a1b3c4d5e6f7a8\" -o test2.zip)",
+      "Bash(rm -f test.ttf test2.zip)",
+      "Bash(curl -sL -A Mozilla/5.0 https://ifonts.xyz/neilvard-three-regular-font-download.html -o page.html)",
+      "mcp__plugin_playwright_playwright__browser_close"
+    ]
+  }
+}
