@@ -12,6 +12,32 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>zrk logistics</title>
+    <style>
+      .toast {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0d0d0d;
+        color: #fff;
+        padding: 16px 28px;
+        border-radius: 8px;
+        font-family: "Questrial", sans-serif;
+        font-size: 15px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        z-index: 9999;
+        border-left: 4px solid #ff0000;
+        animation: toastIn 0.4s ease, toastOut 0.4s ease 3.6s forwards;
+      }
+      @keyframes toastIn {
+        from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+        to { opacity: 1; transform: translateX(-50%) translateY(0); }
+      }
+      @keyframes toastOut {
+        from { opacity: 1; transform: translateX(-50%) translateY(0); }
+        to { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+      }
+    </style>
   </head>
   <body>
     <section class="responsive-header">
@@ -258,27 +284,57 @@
             <p></p>
           </div>
           <div class="contact-form" data-aos="fade-left">
-            <form action="">
+            <form
+              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScTMjiMyqfDlKEml8KfBvc5fUrSRu9NIlM7GztXRVqUBIJiYA/formResponse"
+            >
               <!-- Client name -->
               <label for="name">Name</label>
-              <input type="text" id="name" placeholder="Your name" required />
+              <input
+                type="text"
+                id="name"
+                name="entry.1985440526"
+                placeholder="Your name"
+                required
+              />
               <!-- Client email-->
               <label for="email">Email Address </label>
               <input
                 type="email"
                 id="email"
+                name="entry.1960458536"
                 placeholder="Your email address"
                 required
               />
               <!-- client company name -->
               <label for="company"> Company Name </label>
-              <input type="text" id="company" placeholder="Company Name" />
+              <input
+                type="text"
+                id="company"
+                name="entry.1782385293"
+                placeholder="Company Name"
+              />
               <!-- Subject -->
               <label for="Subject"> Subject </label>
-              <input type="text" id="Subject" placeholder="Subject" />
+              <input
+                type="text"
+                id="Subject"
+                name="entry.2125137131"
+                placeholder="Subject"
+              />
               <!-- Client Message -->
               <label for="Message"> Message</label>
-              <input type="textarea" />
+              <input type="textarea" name="entry.516254603" />
+
+              <!-- Honeypot fields — hidden from humans, trap bots -->
+              <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;opacity:0;pointer-events:none;">
+                <label for="hp_website">Website</label>
+                <input type="text" id="hp_website" name="website" tabindex="-1" autocomplete="off">
+                <label for="hp_phone2">Phone Number</label>
+                <input type="text" id="hp_phone2" name="phone_number" tabindex="-1" autocomplete="off">
+                <label for="hp_fax">Fax</label>
+                <input type="text" id="hp_fax" name="fax_number" tabindex="-1" autocomplete="off">
+              </div>
+
               <button type="submit">Submit</button>
             </form>
           </div>
@@ -362,6 +418,29 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+
+      document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var hp1 = document.getElementById('hp_website').value;
+        var hp2 = document.getElementById('hp_phone2').value;
+        var hp3 = document.getElementById('hp_fax').value;
+        if (hp1 || hp2 || hp3) return;
+
+        var form = this;
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          mode: 'no-cors'
+        }).then(function() {
+          form.reset();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          var toast = document.createElement('div');
+          toast.className = 'toast';
+          toast.textContent = 'Thank you! We\u2019ll be in touch shortly.';
+          document.body.appendChild(toast);
+          setTimeout(function() { toast.remove(); }, 4000);
+        });
+      });
     </script>
   </body>
 </html>
