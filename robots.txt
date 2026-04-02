@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /archive/
+Disallow: /mockups/
+Disallow: /fonts/
+
+Sitemap: https://zrklogistics.ca/sitemap.xml
